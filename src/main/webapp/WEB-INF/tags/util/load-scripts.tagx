@@ -1,0 +1,31 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+
+  <jsp:output omit-xml-declaration="yes" />
+
+  <spring:theme code="styleSheet" var="roo_css" />
+  <spring:url value="/${roo_css}" var="roo_css_url" />
+  <spring:url value="/resources/dijit/themes/tundra/tundra.css" var="tundra_url" />
+  <spring:url value="/resources/images/favicon.ico" var="favicon" />
+  <spring:url value="/resources/javascripts/jquery-1.11.0.min.js" var="jq_url" />
+  <spring:url value="/resources/styles/bootstrap.css" var="bootstrap_css_url" />
+  <spring:url value="/resources/javascripts/bootstrap.min.js" var="bs_url" />
+  <spring:url value="/resources/javascripts/jquery-validate-1.11.1-min.js" var="jqvalidate_url" />
+  <link rel="stylesheet" type="text/css" href="${tundra_url}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="${roo_css_url}" />
+  <link rel="SHORTCUT ICON" href="${favicon}" />
+  <link rel="stylesheet" type="text/css" href="${bootstrap_css_url}" />
+  
+
+  <!-- Get the user local from the page context (it was set by Spring MVC's locale resolver) -->
+  <c:set var="userLocale">
+    <c:set var="plocale">${pageContext.response.locale}</c:set>
+    <c:out value="${fn:replace(plocale, '_', '-')}" default="en" />
+  </c:set>
+  
+  <script src="${jq_url}" type="text/javascript" ><!-- required for FF3 and Opera --></script>
+  <script src="${bs_url}" type="text/javascript" ><!-- required for FF3 and Opera --></script>
+  <spring:url value="/resources/javascripts/jquery-validate-1.11.1-min.js" var="jqvalidate_url" />
+  <script src="${jqvalidate_url }" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+
+</jsp:root>

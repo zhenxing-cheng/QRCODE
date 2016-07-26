@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:spring="http://www.springframework.org/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<spring:url value="/enco" var="form_url" />
+
+	<script type="text/javascript">
+		$(function() {
+			$.ajaxSetup({cache : false});
+			$('#generate').click(function() {
+				var post_url = "${form_url}";	
+				$.ajax({
+					url : post_url,
+					type : 'POST',
+					data : {
+						inputText : $('#inputTexterea').val()
+					},
+					success : function(result) {
+						imgLoad();
+					}
+				});
+			});
+
+			function imgLoad() {
+				var x = 100;
+				var y = 0;
+				var random = parseInt(Math.random() * (x - y + 1) + y);
+				$('#qrcodeDiv').empty();
+				// <![CDATA[
+				var img = '<img id="qrcodeImg" src="${form_url}/get/new?random='+random+'" class="img-thumbnail"><!--  --></img>';
+				// ]]>
+				$('#qrcodeDiv').append(img);
+			}
+		});
+	</script>
+
+	<div id="ecodeQRCodeForm" style="margin-top: 40px">
+	<h2 class="text-center">二维码生成工具</h2>
+	<br/>
+	<br/>
+		<div id="inputDiv" style="margin-left: 120px">
+			<label id="inputText" class="col-sm-1 control-label">输入文本：</label>
+			<textarea rows="18" name="text" id="inputTexterea" class="form-control" style="width: 25%; float: left">http://www.baidu.com</textarea>
+		</div>
+		<div id="clickDiv">
+			<input id="generate" type="button" value="生成二维码"
+				class="btn btn-primary" style="margin-left: 70px; margin-top: 100px; float: left" />
+		</div>
+		<div id="resultDiv">
+			<label id="outputImg" class="col-sm-1 control-label"
+				style="margin-left: 50px;float: left">二维码：</label>
+			<div id="qrcodeDiv" style="margin-left: 50px">
+			<img id="qrcodeImg" src="" class="img-thumbnail" style="width:300px; height:300px"><!--  --></img>
+			</div>
+		</div>
+	</div>
+</div>

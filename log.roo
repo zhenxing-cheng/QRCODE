@@ -1,0 +1,22 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-04-21 12:57:20
+project --topLevelPackage com.trigon.QRCode
+jpa setup --provider HIBERNATE --database mysql
+// [failed] perform eclipse
+// [failed] perform eclipse
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-04-21 13:13:48
+entity jpa --class ~.domain.QRCode --testAutomatically
+web mvc setup
+ web mvc all --package ~.web
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-04-21 13:17:43
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-04-21 15:13:32
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-04-21 15:21:44
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-04-21 15:31:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-04-21 15:32:09
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-04-21 15:38:59
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-04-21 15:41:51
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-04-23 12:03:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-04-23 18:21:11
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-06-20 11:43:39
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-06-20 11:48:24
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-11-03 14:40:17
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-11-03 16:19:52
