@@ -1,2 +1,2 @@
 # QRCODE
-QRCODE
+QRCODE 二维码生成
